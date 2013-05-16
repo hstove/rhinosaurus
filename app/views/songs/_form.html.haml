@@ -1,0 +1,11 @@
+= form_for @song, :html => { :class => 'form-horizontal' } do |f|
+  = form_element f, :title, :text_field
+  .field.control-group
+    / # = f.label :filepicker_url, "Upload a Song"
+    .controls
+      = f.filepicker_field :filepicker_url, button_class: 'btn', onchange: 'pickAvatar(event)', mimetypes: 'audio/*', button_text: "Choose Song"
+      %p.file-success
+      = f.hidden_field :filepicker_url
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), songs_path, :class => 'btn'

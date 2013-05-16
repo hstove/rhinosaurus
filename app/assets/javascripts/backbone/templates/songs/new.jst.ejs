@@ -1,0 +1,30 @@
+<h1>New song</h1>
+
+<form id="new-song" name="song">
+  <div class="field">
+    <label for="filepicker_url"> filepicker_url:</label>
+    <input type="text" name="filepicker_url" id="filepicker_url" value="<%= filepicker_url %>" >
+  </div>
+
+  <div class="field">
+    <label for="title"> title:</label>
+    <input type="text" name="title" id="title" value="<%= title %>" >
+  </div>
+
+  <div class="field">
+    <label for="plays"> plays:</label>
+    <input type="text" name="plays" id="plays" value="<%= plays %>" >
+  </div>
+
+  <div class="field">
+    <label for="length"> length:</label>
+    <input type="text" name="length" id="length" value="<%= length %>" >
+  </div>
+
+  <div class="actions">
+    <input type="submit" value="Create Song" />
+  </div>
+
+</form>
+
+<a href="#/index">Back</a>
