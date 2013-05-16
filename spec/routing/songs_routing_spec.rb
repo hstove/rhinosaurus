@@ -31,5 +31,9 @@ describe SongsController do
       delete("/songs/1").should route_to("songs#destroy", :id => "1")
     end
 
+    it "routes to proxy" do
+      get("/s/1").should route_to("songs#proxy", id: "1")
+    end
+
   end
 end

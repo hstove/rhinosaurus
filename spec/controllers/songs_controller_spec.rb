@@ -23,7 +23,7 @@ describe SongsController do
   # This should return the minimal set of attributes required to create a valid
   # Song. As you add validations to Song, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "filepicker_url" => "MyString" } }
+  let(:valid_attributes) { { "filepicker_url" => "MyString", "title" => "title" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -77,7 +77,7 @@ describe SongsController do
 
       it "redirects to the created song" do
         post :create, {:song => valid_attributes}, valid_session
-        response.should redirect_to(Song.last)
+        response.should redirect_to(songs_path)
       end
     end
 
@@ -119,7 +119,7 @@ describe SongsController do
       it "redirects to the song" do
         song = Song.create! valid_attributes
         put :update, {:id => song.to_param, :song => valid_attributes}, valid_session
-        response.should redirect_to(song)
+        response.should redirect_to(songs_url)
       end
     end
 
